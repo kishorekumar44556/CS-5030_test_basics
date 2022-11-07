@@ -20,18 +20,85 @@ describe('todo test suite', () => {
     });
 
     test("add_todo", () => {
-        expect(todo_service.add_todo().todo.length).toEqual(3);
-    });
+        expect(todo_service.add_todo({
+            title: "sample title",
+        describtion: "sample description",
+        done: false,
+      })
+    ).toEqual([
+      {
+        title: "T1",
+        description: "D1",
+        done: false,
+      },
+      {
+        title: "T1",
+        description: "D1",
+        done: false,
+      },
+      {
+        title: "T1",
+        description: "D1",
+        done: false,
+      },
+      {
+        title: "sample title",
+        describtion: "sample description",
+        done: false,
+      },
+    ]);
+  });
 
     test("delete_todo", () => {
-        expect(todo_service.delete_todo().todo.length).toEqual(3);
-    });
+        expect(todo_service.delete_todo(0)).toEqual([
+            {},
+            {
+              title: "T1",
+              description: "D1",
+              done: false,
+            },
+            {
+              title: "T1",
+              description: "D1",
+              done: false,
+            },
+            {
+              title: "sample title",
+              describtion: "sample description",
+              done: false,
+            },
+          ]);
+        });
 
     test("update_todo", () => {
-        expect(todo_service.update_todo().todo.length).toEqual(3);
+        expect(todo_service.update_todo(0, {
+            title: "sample title 2",
+            describtion: "sample description 2",
+            done: false,
+          })
+        ).toEqual([
+          {
+            title: "sample title 2",
+            describtion: "sample description 2",
+            done: false,
+          },
+          {
+            title: "T1",
+            description: "D1",
+            done: false,
+          },
+          {
+            title: "T1",
+            description: "D1",
+            done: false,
+          },
+          {
+            title: "sample title",
+            describtion: "sample description",
+            done: false,
+          },
+        ]);
+      });
+    
     });
 
-    // Write all your test cases here that corresponds to software requirements
-
-
-});
