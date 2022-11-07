@@ -19,7 +19,17 @@ describe('todo test suite', () => {
         expect(todo_service.get_todos().todo.length).toEqual(3);
     });
 
-    
+    test("add_todo", () => {
+        expect(todo_service.add_todo().todo.length).toEqual(3);
+    });
+
+    test("delete_todo", () => {
+        expect(todo_service.delete_todo().todo.length).toEqual(3);
+    });
+
+    test("update_todo", () => {
+        expect(todo_service.update_todo().todo.length).toEqual(3);
+    });
 
     // Write all your test cases here that corresponds to software requirements
 
