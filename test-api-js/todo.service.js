@@ -19,7 +19,7 @@ class todoservice{
     }
 
     get_todos(){
-        return this.todos;
+        this.todos;
     }
 
     add_todo(todo){
