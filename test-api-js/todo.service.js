@@ -23,23 +23,20 @@ class todoservice{
     }
 
     add_todo(todo){
-        // Your code here
-        this.todo_data.todo[3] = todo;
-        return this.todo_data.todo;
-    }
+        this.todos.todo.push(todo);  
+      }
 
     delete_todo(id){
-        // Your code here
-        this.todo_data.todo[id] = {};
-        return this.todo_data.todo;
+        this.todos.todo = this.todos.todo.filter((todo,index) => index != id); 
     }
 
     update_todo(id, todo){
-        // Your code here
-        this.todo_data.todo[id] = todo;
-        return this.todo_data.todo;
+        this.todos.todo = this.todos.todo.map((currentTodo,index) => {
+            if(index === id)
+                return todo;
+            return currentTodo;
+        })
     }
 }
 
-
-module.exports= todoservice;
+module.exports = todoservice
