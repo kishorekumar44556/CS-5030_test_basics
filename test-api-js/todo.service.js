@@ -19,25 +19,25 @@ class todoservice{
     }
 
     get_todos(){
-        this.todos;
+        yield this.todos;
     }
 
     add_todo(todo){
         // Your code here
         this.todo_data.todo[1] = todo;
-        this.todo_data.todo;
+        yield this.todo_data.todo;
     }
 
     delete_todo(id){
         // Your code here
         this.todo_data.todo[id] = {};
-        this.todo_data.todo;
+        yield this.todo_data.todo;
     }
 
     update_todo(id, todo){
         // Your code here
         this.todo_data.todo[id] = todo;
-        this.todo_data.todo;
+        yield this.todo_data.todo;
     }
 }
 
